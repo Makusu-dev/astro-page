@@ -1,0 +1,21 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro";
+import "./posts.css";
+
+---
+
+<!-- available in frontmatter
+layout, title, pubDate, description, author, image, url, alt, tags
+-->
+
+<BaseLayout pageTitle={frontmatter.title}>
+<p>Written by {frontmatter.author}</p>
+<p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+<slot />
+<div class = "tags">
+    {frontmatter.tags.map((tag: any)=><a class="tag" href={`http://localhost:4321/tags/${encodeURIComponent(tag)}`}>{tag}</a>)}
+</div>
+</BaseLayout>
+
