@@ -1,16 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
-const baseUrl = import.meta.env.BASE_URL;
-const site = import.meta.env.SITE;
+import Greeting from '../components/Greetings';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
-
-<div>
-  <p>BASE_URL: {baseUrl}</p>
-  <p>SITE: {site}</p>
-</div>
-
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
