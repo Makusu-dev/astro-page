@@ -1,6 +1,5 @@
 ---
 const { title, urlTarget } = Astro.props;
-import { url } from '../utils/url';
 ---
 
- <li><a href={url(urlTarget)}>{title}</a></li>
+ <li><a href={urlTarget}>{title}</a></li>
