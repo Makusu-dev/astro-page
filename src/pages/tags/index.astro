@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../utils/url';
 const pageTitle = "Topics";
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 ---
 <BaseLayout pageTitle={pageTitle}>
     <div class="tags">
-        {tags.map((tag) =><a class="tag" href={`/tags/${encodeURIComponent(tag)}`}>{tag}</a>)}
+        {tags.map((tag) =><a class="tag" href={url(`/tags/${encodeURIComponent(tag)}`)}>{tag}</a>)}
     </div>
 </BaseLayout>
