@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css";
+import { getRelativeLocaleUrl } from 'astro:i18n';
 ---
 <div id="main-menu" class="nav-links">
     <a href="/">Home</a>
     <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <a href={new URL('/blog', Astro.site).pathname}>Blog</a>
 </div>
