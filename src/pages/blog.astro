@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Blogpost from '../components/Blogpost.astro';
 import { url } from '../utils/url';
+import BlogpostCard from "../components/BlogpostCard.astro";
 
 const pageTitle="My Astro Learning Blog" 
 const allPosts = await getCollection("blog");
@@ -11,8 +12,14 @@ const allPosts = await getCollection("blog");
 <BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
     <ul>
- {allPosts.map((post: any) => 
+      <!--
+        {allPosts.map((post: any) => 
          <Blogpost urlTarget={url(`/posts/${post.id}/`)} title={post.data.title} />)}
     </ul>
+     -->
+    {allPosts.map((post: any) => 
+         <BlogpostCard urlTarget={url(`/posts/${post.id}/`)} description={post.data.description} title={post.data.title} imgUrl={post.data.image.url} />)}
+    </ul>
+
 </BaseLayout>	
 </html>
