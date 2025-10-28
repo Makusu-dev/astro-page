@@ -12,7 +12,7 @@ const allPosts = await getCollection("blog");
   <p>This is where I will post about my journey learning Astro.</p>
     <ul>
  {allPosts.map((post: any) => 
-         <Blogpost urlTarget={url(`${post.id}/`)} title={post.data.title} />)}
+         <Blogpost urlTarget={url(`/posts/${post.id}/`)} title={post.data.title} />)}
     </ul>
 </BaseLayout>	
 </html>
