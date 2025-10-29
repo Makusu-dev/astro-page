@@ -10,16 +10,23 @@ const allPosts = await getCollection("blog");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      <!--
-        {allPosts.map((post: any) => 
-         <Blogpost urlTarget={url(`/posts/${post.id}/`)} title={post.data.title} />)}
-    </ul>
-     -->
+  <div class ="blogpost-container">  
     {allPosts.map((post: any) => 
          <BlogpostCard urlTarget={url(`/posts/${post.id}/`)} description={post.data.description} title={post.data.title} imgUrl={post.data.image.url} />)}
-    </ul>
-
+  </div>
 </BaseLayout>	
 </html>
+
+<style>
+  .blogpost-container {
+    width:fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+  }
+  .blogpost-container > * {
+    margin: 5px;
+  }
+</style>

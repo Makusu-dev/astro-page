@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   site: 'https://makusu-dev.github.io',
   base: '/maxime-jeannin',
   integrations: [preact()],

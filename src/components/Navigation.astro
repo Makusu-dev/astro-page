@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { url } from '../utils/url';
 ---
 <div id="main-menu" class="nav-links">
-    <a href={url('/')}>Home</a>
-    <a href={url('/about/')}>About</a>
-    <a href={url('/blog')}>Blog</a>
+    <a data-astro-prefetch href={url('/')}>Home</a>
+    <a data-astro-prefetch href={url('/about/')}>About</a>
+    <a data-astro-prefetch href={url('/blog')}>Blog</a>
 </div>
