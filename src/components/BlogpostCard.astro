@@ -1,17 +1,32 @@
 ---
 const { title, urlTarget, description, imgUrl } = Astro.props;
 ---
-<div class="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src={imgUrl}
-      alt="" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    <p>{description}</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-link btn-primary"><a href={urlTarget}>{title}</a></button>
+<div class="card-container">
+  <div class="card bg-base-100 w-96 shadow-sm">
+      <figure>
+        <img
+          src={imgUrl}
+          alt="" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{title}</h2>
+        <p>{description}</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-link btn-primary"><a href={urlTarget}>{title}</a></button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <style>
+    .card-container {
+        margin:5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .card-body p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+ </style>
