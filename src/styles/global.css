@@ -29,14 +29,16 @@ html.dark {
   color: #ff9776;
 }
 
+
+
 body {
   display:flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 80%;
-  padding: 1rem;
+
+
   line-height: 1.5;
 }
 
